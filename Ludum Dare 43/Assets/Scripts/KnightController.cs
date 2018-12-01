@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class KnightController : MonoBehaviour {
 
@@ -9,7 +7,6 @@ public class KnightController : MonoBehaviour {
     // MOVEMENT
     public float moveSpeed;
     private float moveInput;
-    private bool facingRight;
 
     // JUMPING
     public float jumpForce;
@@ -21,10 +18,12 @@ public class KnightController : MonoBehaviour {
     private float jumpTimeCounter;
     private bool isJumping;
 
+    // ANIMATION
+    public Animator animator;
+
 	void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
-        facingRight = false;
 	}
 	
 	void Update ()
@@ -44,13 +43,14 @@ public class KnightController : MonoBehaviour {
         FlipDirection();
 
         rb.velocity = new Vector2(moveInput * moveSpeed * Time.fixedDeltaTime, rb.velocity.y);
+        animator.SetFloat("Speed", Mathf.Abs(moveInput));
     }
 
     void FlipDirection()
     {
-        if (moveInput < 0)
+        if (moveInput > 0)
             transform.eulerAngles = new Vector3(0, 0, 0);
-        else if (moveInput > 0)
+        else if (moveInput < 0)
             transform.eulerAngles = new Vector3(0, 180, 0);
     }
 
@@ -63,7 +63,12 @@ public class KnightController : MonoBehaviour {
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = new Vector2(rb.velocity.x, Vector2.up.y * jumpForce);
+            animator.SetBool("IsJumping", true);
         }
+        //else if (isGrounded)
+        //{
+        //    animator.SetBool("IsJumping", false);
+        //}
 
         if (Input.GetKey(KeyCode.Space) && isJumping)
         {
@@ -76,12 +81,26 @@ public class KnightController : MonoBehaviour {
             {
                 isJumping = false;
             }
-
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isJumping = false;
+            isGrounded = true;
+            //animator.SetBool("IsJumping", false);
+        }
+    }
+
+    public void TakeDamage()
+    {
+        Destroy(gameObject);
     }
 }
