@@ -34,7 +34,6 @@ public class KnightController : MonoBehaviour {
     void FixedUpdate()
     {
         Move();
-       
     }
 
     void Move()
@@ -97,10 +96,5 @@ public class KnightController : MonoBehaviour {
             isGrounded = true;
             //animator.SetBool("IsJumping", false);
         }
-    }
-
-    public void TakeDamage()
-    {
-        Destroy(gameObject);
     }
 }
