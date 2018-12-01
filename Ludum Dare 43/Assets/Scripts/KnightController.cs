@@ -21,9 +21,14 @@ public class KnightController : MonoBehaviour {
     // ANIMATION
     public Animator animator;
 
-	void Start ()
+    // HEALTH
+    public int maxHealth;
+    public int health { get; private set; }
+
+    void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
+        health = maxHealth;
 	}
 	
 	void Update ()
@@ -95,6 +100,17 @@ public class KnightController : MonoBehaviour {
             isJumping = false;
             isGrounded = true;
             //animator.SetBool("IsJumping", false);
+        }
+    }
+
+    public void TakeDamage(int damageValue)
+    {
+        health -= damageValue;
+
+        if (health <= 0)
+        {
+            health = 0;
+            Destroy(gameObject);
         }
     }
 }

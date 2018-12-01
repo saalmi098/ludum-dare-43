@@ -5,6 +5,7 @@ using UnityEngine;
 public class AsteroidController : MonoBehaviour {
 
     public float speed;
+    public int damage;
 
     Rigidbody2D rb;
 
@@ -22,8 +23,8 @@ public class AsteroidController : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            KnightHealth knight = collision.gameObject.GetComponent<KnightHealth>();
-            knight.TakeDamage(50);
+            KnightController knight = collision.gameObject.GetComponent<KnightController>();
+            knight.TakeDamage(damage);
         }
 
         Destroy(gameObject);

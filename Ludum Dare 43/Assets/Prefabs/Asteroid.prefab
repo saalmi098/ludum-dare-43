@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 300
+  damage: 50
 --- !u!212 &212011880380864282
 SpriteRenderer:
   m_ObjectHideFlags: 1

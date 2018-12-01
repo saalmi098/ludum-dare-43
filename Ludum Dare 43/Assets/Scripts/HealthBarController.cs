@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class KnightHealth : MonoBehaviour {
+public class HealthBarController : MonoBehaviour {
 
-    public int maxHealth;
-    public int health;
+    public GameObject knight;
+    KnightController knightController;
+
     public int numberOfHearts;
 
     public Image[] hearts;
@@ -13,7 +14,7 @@ public class KnightHealth : MonoBehaviour {
 
     void Start()
     {
-        health = maxHealth;
+        knightController = knight.transform.GetComponent<KnightController>();
     }
 
     void Update()
@@ -23,6 +24,8 @@ public class KnightHealth : MonoBehaviour {
 
     void UpdateHealthBar()
     {
+        var health = knightController.health;
+
         // max constraint
         if (health > numberOfHearts * 10)
         {
@@ -31,7 +34,8 @@ public class KnightHealth : MonoBehaviour {
 
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i * 10 <= health)
+            // display full or empty heart
+            if (i * 10 < health)
             {
                 hearts[i].sprite = fullHeart;
             }
@@ -40,6 +44,7 @@ public class KnightHealth : MonoBehaviour {
                 hearts[i].sprite = emptyHeart;
             }
 
+            // in case that less hearts want to be displayed
             if (i < numberOfHearts)
             {
                 hearts[i].enabled = true;
@@ -48,16 +53,6 @@ public class KnightHealth : MonoBehaviour {
             {
                 hearts[i].enabled = false;
             }
-        }
-    }
-
-    public void TakeDamage(int damageValue)
-    {
-        health -= damageValue;
-
-        if (health <= 0)
-        {
-            Destroy(gameObject);
         }
     }
 }
