@@ -141,7 +141,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 143623526}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f5f09daa2f20dc34fafed99b6306390f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 805669054}
   m_Layer: 10
   m_Name: SpriteShape
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -415,7 +415,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 805669053}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f5f09daa2f20dc34fafed99b6306390f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -498,7 +498,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 1151396062}
   m_Layer: 10
   m_Name: SpriteShape (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -639,7 +639,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -703,7 +703,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1151396057}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f5f09daa2f20dc34fafed99b6306390f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -744,6 +744,53 @@ EdgeCollider2D:
   - {x: 5.6225247, y: -0.7308797}
   - {x: 15.617817, y: 1.7662723}
   - {x: 15.649946, y: -1.8391514}
+--- !u!1001 &1180518841
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4619035876950832, guid: b2988c5f385cd824bb325d998e7aeef0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619035876950832, guid: b2988c5f385cd824bb325d998e7aeef0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619035876950832, guid: b2988c5f385cd824bb325d998e7aeef0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619035876950832, guid: b2988c5f385cd824bb325d998e7aeef0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619035876950832, guid: b2988c5f385cd824bb325d998e7aeef0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619035876950832, guid: b2988c5f385cd824bb325d998e7aeef0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619035876950832, guid: b2988c5f385cd824bb325d998e7aeef0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619035876950832, guid: b2988c5f385cd824bb325d998e7aeef0, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633865682829055500, guid: b2988c5f385cd824bb325d998e7aeef0,
+        type: 2}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b2988c5f385cd824bb325d998e7aeef0, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1532483613
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,7 +804,7 @@ GameObject:
   - component: {fileID: 1532483614}
   m_Layer: 10
   m_Name: SpriteShape (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -770,7 +817,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1532483613}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f5f09daa2f20dc34fafed99b6306390f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -853,7 +900,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
