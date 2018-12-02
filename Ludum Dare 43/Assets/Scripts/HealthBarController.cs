@@ -24,7 +24,7 @@ public class HealthBarController : MonoBehaviour {
 
     void UpdateHealthBar()
     {
-        var health = knightController.health;
+        var health = knightController != null ? knightController.health : 0;
 
         // max constraint
         if (health > numberOfHearts * 10)
